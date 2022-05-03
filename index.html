@@ -5,19 +5,22 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>JH Figure</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/6d/b9/31/6db931827443a7455a4b805fe5829820.jpg" type="image/x-icon"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <link rel="stylesheet" href="/assets/css/base.css" />
   <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/grid.css" />
+  <link rel="stylesheet" href="/assets/css/reponsive.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.1.0-web/css/all.css">
 </head>
 
 <body>
-  <div class="app">
-    <div class="header">
-      <div class="grid">
-        <nav class="navbar">
+  <div class="app ">
+    <header class="header hide-on-mobile">
+      <div class="grid wide"> 
+        <nav class="navbar hide-on-mobile-tablet">
           <ul class="header__navbar-list">
             <li class="navbar__item">
               <a href="" class="navbar__item-link navbar__item-separate">Kênh người bán</a>
@@ -128,13 +131,13 @@
                 <li class="language-item">English</li>
               </ul>
             </li>
-            <!-- <li class="navbar__item">
-              <a href="" class="navbar__item-link navbar__item-separate">Đăng Ký</a>
+            <li class="navbar__item">
+              <a class="navbar__item-link navbar__item-separate js-register">Đăng Ký</a>
             </li>
             <li class="navbar__item">
-              <a href="" class="navbar__item-link">Đăng Nhập</a>
-            </li> -->
-            <li class="navbar-item-user navbar__item">
+              <a class="navbar__item-link js-login">Đăng Nhập</a>
+            </li>
+            <!-- <li class="navbar-item-user navbar__item">
               <img class="navbar-user-img" src="/assets/img/user_avata.jpg" alt="">
               <span class="navbar-user-name">Kitsunene</span>
               <ul class="navbar-user-menu">
@@ -144,13 +147,17 @@
                   <a href="">Đăng Xuất</a>
                 </li>
               </ul>
-            </li>
+            </li> -->
           </ul>
         </nav>
 
         <!-- Header with search -->
         <div class="header-with-search">
-          <div class="header__logo">
+          <label for="mobile-search-checkox" class="header__mobile-search">
+            <i class="mobile-search-checkox-icon fa-solid fa-magnifying-glass"></i>
+          </label>
+
+          <div class="header__logo hide-on-tablet">
             <a href="" class="header__logo-link">
               <svg viewBox="0 0 192 65" class="header__logo-img">
                 <g fill-rule="evenodd">
@@ -162,49 +169,50 @@
             </a>
           </div>
 
-          
-            <div class="header__search">
-              <div class="header__search-input-wrap">
-                <input type="text" class="header__search-input" placeholder="Tìm trong Shop này">
-                <div class="header__search-history">
-                  <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
-                  <ul class="history-list">
-                    <li class="header__search-history-item">
-                      <a href="" class="header__search-history-item--link">Mô hình fingure Rem</a>
-                    </li>
-                    <li class="header__search-history-item">
-                      <a href="" class="header__search-history-item--link">Tai nghe samsungbud</a>
-                    </li>
-                    <li class="header__search-history-item">
-                      <a href="" class="header__search-history-item--link">Áo barzer</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-  
-              <div class="header__search-select">
-                <span class="header__search-select-label">Trong Shop này</span>
-                <i class="header__search-icon fa-thin fas fa-angle-down"></i>
-                <div class="header__search-opition">
-                  <li class="header__search-opition-item header__search-opition-item--active">
-                    <span>Trong Shop này</span>
-                    <i class="fa-solid fa-check"></i>
+          <input type="checkbox" hidden id="mobile-search-checkox" class="header__seacrch-checkbox">
+
+          <div class="header__search">
+            <div class="header__search-input-wrap">
+              <input type="text" class="header__search-input" placeholder="Tìm trong Shop này">
+              <div class="header__search-history">
+                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                <ul class="history-list">
+                  <li class="header__search-history-item">
+                    <a href="" class="header__search-history-item--link">Mô hình fingure Rem</a>
                   </li>
-                  <li class="header__search-opition-item">
-                    <span>Trong Shopee</span>
-                    <i class="fa-solid fa-check"></i>
+                  <li class="header__search-history-item">
+                    <a href="" class="header__search-history-item--link">Tai nghe samsungbud</a>
                   </li>
-                </div>
+                  <li class="header__search-history-item">
+                    <a href="" class="header__search-history-item--link">Áo barzer</a>
+                  </li>
+                </ul>
               </div>
-              <button class="header__search-btn">
-                <i class="header__search-btn-icon fa-thin fas fa-magnifying-glass"></i>
-              </button>
-            </div> 
+            </div>
+
+            <div class="header__search-select">
+              <span class="header__search-select-label hide-on-mobile">Trong Shop này</span>
+              <i class="header__search-icon fa-thin fas fa-angle-down"></i>
+              <div class="header__search-opition">
+                <li class="header__search-opition-item header__search-opition-item--active">
+                  <span>Trong Shop này</span>
+                  <i class="fa-solid fa-check"></i>
+                </li>
+                <li class="header__search-opition-item">
+                  <span>Trong Shopee</span>
+                  <i class="fa-solid fa-check"></i>
+                </li>
+              </div>
+            </div>
+            <button class="header__search-btn">
+              <i class="header__search-btn-icon fa-thin fas fa-magnifying-glass"></i>
+            </button>
+          </div> 
           
           <div class="header__cart">
             <div class="header__cart-wrap">
               <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-              <span class="header__cart-notice">3</span>
+              <span class="header__cart-notice">4</span>
 
               <!-- No card: header__cart-list--no-cart-->
               <div class="header__cart-list">
@@ -275,7 +283,7 @@
                 </ul>
 
                 <div class="header__cart-button-wrap">
-                  <span>3 đã thêm vào giỏ hàng</span>
+                  <span>4 đã thêm vào giỏ hàng</span>
                   <button class="btn btn-primary btn-cart">
                     Xem giỏ hàng
                   </button>
@@ -285,12 +293,121 @@
           </div>
         </div>
       </div>
-    </div>
+
+      
+
+      <ul class="header__sort-bar">
+        <li class="header__sort-item header__sort-item--active">
+          <a href="" class="header__sort-link">Liên quan</a>
+        </li>
+        <li class="header__sort-item">
+          <a href="" class="header__sort-link">Mới nhất</a>
+        </li>
+        <li class="header__sort-item">
+          <a href="" class="header__sort-link">Bán chạy</a>
+        </li>
+        <li class="header__sort-item">
+          <a href="" class="header__sort-link">Giá</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- Mobile header -->
+    <header class="mobile-header">
+        <div class="navbar-mobile-header">
+          <i class="navbar-mobile-back fa-solid fa-arrow-left"></i>
+          <div class="mobile-header-search">
+            <i class="mobile-header-search-icon fa-solid fa-magnifying-glass"></i>
+            <input placeholder="Tìm kiếm trong James's" class="mobile-header-search-input" type="text">
+          </div>
+          <div class="mobile-header-filter">
+          <i class="fa-solid fa-filter"></i>
+          <span>Lọc</span>
+        </div>
+      </div>
+
+      <ul class="header__sort-bar">
+        <li class="header__sort-item header__sort-item--active">
+          <a href="" class="header__sort-link">Liên quan</a>
+        </li>
+        <li class="header__sort-item">
+          <a href="" class="header__sort-link">Mới nhất</a>
+        </li>
+        <li class="header__sort-item">
+          <a href="" class="header__sort-link">Bán chạy</a>
+        </li>
+        <li class="header__sort-item">
+          <a href="" class="header__sort-link">Giá</a>
+        </li>
+      </ul>
+    </header>
+
 
     <div class="app__container">
-      <div class="grid">
-        <div class="grid__row">
-          <div class="grid__column-2">
+      <div class="info-wrap hide-on-mobile-tablet">
+        <div class="grid wide">
+          <div class="header-shop__info">
+            <div class="header-shop__info-name" style="background-image: url(https://cf.shopee.vn/file/af6cde83c81c8566fd212ac37da1ffc5_tn);">
+              <div class="header-shop__info-name-wrap">
+                  <div class="header-shop__info-img-name">
+                    <div class="header-shop__info-img">
+                      <img class="header-shop__info-img" src="https://cf.shopee.vn/file/58183c59186610da38c87bf26cbe7d6a_tn" alt="">
+                    </div>
+                    <div class="header-shop__info-status">
+                      <h3>JH Fingure</h3>
+                      <span>Online 26 phút trước</span>
+                    </div>
+                  </div>
+                  <div class="header-shop__info-follow js-login">
+                    + Theo dõi
+                  </div>
+                </div>
+            </div>
+    
+            <div class="header-shop-wrap">
+              <div class="header-shop__info-product header-shop__info-product">
+                <span>
+                  <i class="fa-solid fa-store"></i>
+                  Sản phẩm :
+                  <a href="" class= "info">789</a>
+                </span>
+                <span>
+                  <i class="fa-solid fa-user-plus"></i>
+                  Đang theo :
+                  <span class= "info">154</span>
+                </span>
+                <span>
+                  <i class="fa-solid fa-message"></i>
+                  Tỷ lệ phản hồi chat :
+                  <span class= "info">98% (Trong vài giờ)</span>
+                </span>
+              </div>
+              <div class="header-shop__info-product">
+                <span>
+                  <i class="fa-solid fa-user-group"></i>
+                  Người theo dõi :
+                  <a href="" class= "info">6,6k</a>
+                </span>
+                <span>
+                  <i class="fa-solid fa-star"></i>
+                  Đánh giá :
+                  <span class= "info">5.0 (1,7k Đánh giá)</span>
+                </span>
+                <span>
+                  <i class="fa-solid fa-user-check"></i>
+                  Tham gia :
+                  <span class= "info">5 năm trước</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      
+      <div class="grid wide">
+        <div class="row">
+          <div class="col l-2 m-0 c-0">
             <nav class="category">
               <h3 class="category__heading">
                 <i class="heading-icon fa-solid fa-list"></i>
@@ -331,8 +448,8 @@
             </nav>
           </div>
   
-          <div class="grid__column-10">
-            <div class="home__filter-wrap">
+          <div class="col l-10 m-12 c-12">
+            <div class="home__filter-wrap hide-on-mobile-tablet">
               <div class="home__filter">
                 <span class="home__filter__label">
                   Sắp xếp theo
@@ -365,9 +482,42 @@
               </div>
             </div>
 
+            <nav class="mobile-category">
+              <ul class="mobile-category__list">
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+                <li class="mobile-category__item">
+                  <a href="" class="mobile-category__link">Hàng mới về & Sản phẩm mới</a>
+                </li>
+
+              </ul>
+            </nav>
+
             <div class="home-product">
-              <div class="grid__row">
-                <div class="grid__column-2-4">
+              <div class="row sm-gutter app-content">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/f3c4c4a6f67627a3703cba484a71391a_tn);"></div>
                     <div class="home-product-item__info">
@@ -428,7 +578,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/232092093b4620e652b3208384933d53);"></div>
                     <div class="home-product-item__info">
@@ -489,7 +639,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/24fc427cb41d1066c024df318769f186);"></div>
                     <div class="home-product-item__info">
@@ -550,7 +700,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/8ee36a0fc363161f2f6ddc959b7f0ebf);"></div>
                     <div class="home-product-item__info">
@@ -562,26 +712,7 @@
                           <span class="home-product-item__price "> - </span>
                          <span class="home-product-item__price"><sup>₫</sup>585.000</span>
                         </div>
-                        <div class="home-product-item__free-ship">
-                          <svg height="12" viewBox="0 0 20 12" width="20" class="home-product-item__free-ship-svg">
-                            <g fill="none" fill-rule="evenodd" transform="">
-                                <rect fill="#00bfa5" fill-rule="evenodd" height="9" rx="1" width="12" x="4"></rect>
-                                <rect height="8" rx="1" stroke="#00bfa5" width="11" x="4.5" y=".5"></rect>
-                                <rect fill="#00bfa5" fill-rule="evenodd" height="7" rx="1" width="7" x="13" y="2"></rect>
-                                <rect height="6" rx="1" stroke="#00bfa5" width="6" x="13.5" y="2.5"></rect>
-                                <circle cx="8" cy="10" fill="#00bfa5" r="2"></circle>
-                                <circle cx="15" cy="10" fill="#00bfa5" r="2"></circle>
-                                <path
-                                    d="m6.7082481 6.7999878h-.7082481v-4.2275391h2.8488017v.5976563h-2.1405536v1.2978515h1.9603297v.5800782h-1.9603297zm2.6762505 0v-3.1904297h.6544972v.4892578h.0505892c.0980164-.3134765.4774351-.5419922.9264138-.5419922.0980165 0 .2276512.0087891.3003731.0263672v.6210938c-.053751-.0175782-.2624312-.038086-.3762568-.038086-.5122152 0-.8758247.3017578-.8758247.75v1.8837891zm3.608988-2.7158203c-.5027297 0-.8536919.328125-.8916338.8261719h1.7390022c-.0158092-.5009766-.3446386-.8261719-.8473684-.8261719zm.8442065 1.8544922h.6544972c-.1549293.571289-.7050863.9228515-1.49238.9228515-.9864885 0-1.5903965-.6269531-1.5903965-1.6464843 0-1.0195313.6165553-1.6669922 1.5872347-1.6669922.9580321 0 1.5366455.6064453 1.5366455 1.6083984v.2197266h-2.4314412v.0351562c.0221328.5595703.373095.9140625.9169284.9140625.4110369 0 .6924391-.1376953.8189119-.3867187zm2.6224996-1.8544922c-.5027297 0-.853692.328125-.8916339.8261719h1.7390022c-.0158091-.5009766-.3446386-.8261719-.8473683-.8261719zm.8442064 1.8544922h.6544972c-.1549293.571289-.7050863.9228515-1.49238.9228515-.9864885 0-1.5903965-.6269531-1.5903965-1.6464843 0-1.0195313.6165553-1.6669922 1.5872347-1.6669922.9580321 0 1.5366455.6064453 1.5366455 1.6083984v.2197266h-2.4314412v.0351562c.0221328.5595703.373095.9140625.9169284.9140625.4110369 0 .6924391-.1376953.8189119-.3867187z"
-                                    fill="#fff"
-                                ></path>
-                                <path d="m .5 8.5h3.5v1h-3.5z" fill="#00bfa5"></path>
-                                <path d="m0 10.15674h3.5v1h-3.5z" fill="#00bfa5"></path>
-                                <circle cx="8" cy="10" fill="#047565" r="1"></circle>
-                                <circle cx="15" cy="10" fill="#047565" r="1"></circle>
-                            </g>
-                          </svg>
-                        </div>
+                        
                       </div>
                       <div class="home-product-item__action">
                         <span class="home-product-item__heart home-product-item__heart--liked">
@@ -611,7 +742,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/c74945ab4f2263ade39c66f6d663f586);"></div>
                     <div class="home-product-item__info">
@@ -623,26 +754,7 @@
                           <span class="home-product-item__price "> - </span>
                          <span class="home-product-item__price"><sup>₫</sup>585.000</span>
                         </div>
-                        <div class="home-product-item__free-ship">
-                          <svg height="12" viewBox="0 0 20 12" width="20" class="home-product-item__free-ship-svg">
-                            <g fill="none" fill-rule="evenodd" transform="">
-                                <rect fill="#00bfa5" fill-rule="evenodd" height="9" rx="1" width="12" x="4"></rect>
-                                <rect height="8" rx="1" stroke="#00bfa5" width="11" x="4.5" y=".5"></rect>
-                                <rect fill="#00bfa5" fill-rule="evenodd" height="7" rx="1" width="7" x="13" y="2"></rect>
-                                <rect height="6" rx="1" stroke="#00bfa5" width="6" x="13.5" y="2.5"></rect>
-                                <circle cx="8" cy="10" fill="#00bfa5" r="2"></circle>
-                                <circle cx="15" cy="10" fill="#00bfa5" r="2"></circle>
-                                <path
-                                    d="m6.7082481 6.7999878h-.7082481v-4.2275391h2.8488017v.5976563h-2.1405536v1.2978515h1.9603297v.5800782h-1.9603297zm2.6762505 0v-3.1904297h.6544972v.4892578h.0505892c.0980164-.3134765.4774351-.5419922.9264138-.5419922.0980165 0 .2276512.0087891.3003731.0263672v.6210938c-.053751-.0175782-.2624312-.038086-.3762568-.038086-.5122152 0-.8758247.3017578-.8758247.75v1.8837891zm3.608988-2.7158203c-.5027297 0-.8536919.328125-.8916338.8261719h1.7390022c-.0158092-.5009766-.3446386-.8261719-.8473684-.8261719zm.8442065 1.8544922h.6544972c-.1549293.571289-.7050863.9228515-1.49238.9228515-.9864885 0-1.5903965-.6269531-1.5903965-1.6464843 0-1.0195313.6165553-1.6669922 1.5872347-1.6669922.9580321 0 1.5366455.6064453 1.5366455 1.6083984v.2197266h-2.4314412v.0351562c.0221328.5595703.373095.9140625.9169284.9140625.4110369 0 .6924391-.1376953.8189119-.3867187zm2.6224996-1.8544922c-.5027297 0-.853692.328125-.8916339.8261719h1.7390022c-.0158091-.5009766-.3446386-.8261719-.8473683-.8261719zm.8442064 1.8544922h.6544972c-.1549293.571289-.7050863.9228515-1.49238.9228515-.9864885 0-1.5903965-.6269531-1.5903965-1.6464843 0-1.0195313.6165553-1.6669922 1.5872347-1.6669922.9580321 0 1.5366455.6064453 1.5366455 1.6083984v.2197266h-2.4314412v.0351562c.0221328.5595703.373095.9140625.9169284.9140625.4110369 0 .6924391-.1376953.8189119-.3867187z"
-                                    fill="#fff"
-                                ></path>
-                                <path d="m .5 8.5h3.5v1h-3.5z" fill="#00bfa5"></path>
-                                <path d="m0 10.15674h3.5v1h-3.5z" fill="#00bfa5"></path>
-                                <circle cx="8" cy="10" fill="#047565" r="1"></circle>
-                                <circle cx="15" cy="10" fill="#047565" r="1"></circle>
-                            </g>
-                          </svg>
-                        </div>
+                       
                       </div>
                       <div class="home-product-item__action">
                         <span class="home-product-item__heart home-product-item__heart--liked">
@@ -672,7 +784,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/b1fd9ea7aaec9c816dd3eac4fc8c5e70)"></div>
                     <div class="home-product-item__info">
@@ -733,7 +845,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/120e520dece5fc49ba931fb6200500cd);"></div>
                     <div class="home-product-item__info">
@@ -794,7 +906,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/3cc3a2e72564f4ab86070dd43e6ecd6a);"></div>
                     <div class="home-product-item__info">
@@ -855,7 +967,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/ae787ea6b8e18b9780b40284f728bbcc);"></div>
                     <div class="home-product-item__info">
@@ -865,7 +977,7 @@
                         <div class="home-product-item__price-wrap">
                           <span class="home-product-item__price"><sup>₫</sup>660.000</span>
                           <span class="home-product-item__price "></span>
-                         <span class="home-product-item__price"><sup>₫</sup></span>
+                         <span class="home-product-item__price"><sup></sup></span>
                         </div>
                         <div class="home-product-item__free-ship">
                           <svg height="12" viewBox="0 0 20 12" width="20" class="home-product-item__free-ship-svg">
@@ -916,7 +1028,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/eb6606aaf71c4e52fc9fbb445ce1124a);"></div>
                     <div class="home-product-item__info">
@@ -977,7 +1089,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/f57ef36d6c16f1790e511a8c49e83b1b);"></div>
                     <div class="home-product-item__info">
@@ -1038,7 +1150,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/dfd2e40b4b230cc3725c29b29177add1);"></div>
                     <div class="home-product-item__info">
@@ -1099,7 +1211,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/b8f60dbc83af4e35fe78d4a569528a06);"></div>
                     <div class="home-product-item__info">
@@ -1160,7 +1272,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/15292d937991efd39bb6cac2742de2e0);"></div>
                     <div class="home-product-item__info">
@@ -1221,7 +1333,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                   <a class="home-product-item">
                     <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/90f329b6893bacb30582b4afff21ff4d);"></div>
                     <div class="home-product-item__info">
@@ -1322,10 +1434,10 @@
 
     <div class="footer">
       <div class="footer__space"></div>
-      <div class="grid">
-        <div class="grid__row">
+      <div class="grid wide">
+        <div class="row">
           <div class="grid__row-wrap">
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
               <ul class="footer__list">
                 <li class="footer-item">
@@ -1343,7 +1455,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">VỀ SHOPEE</h3>
               <ul class="footer__list">
                 <li class="footer-item">
@@ -1359,7 +1471,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">THANH TOÁN</h3>
               <ul class="footer__list">
                 <li class="footer-item">
@@ -1373,7 +1485,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
               <ul class="footer__list">
                 <li class="footer-item">
@@ -1388,7 +1500,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">TẢI ỨNG DỤNG NGAY THÔI</h3>
               <ul class="footer__list">
                 <li class="footer-item footer-item-socical">
@@ -1415,18 +1527,18 @@
     </div>
   </div>
   </div>
-  <!-- modal-layout -->
-  <!-- <div class="modal">
-      <!-- <div class="modal__overlay">
+  <!--modal-layout -->
+  <div class="modal js-modal">
+      <div class="modal__overlay">
 
-      </div> -->
-  <!-- <div class="modal__body"> -->
-  <!-- Register form -->
-  <!-- <div class="auth-form">
-          <div class="auth-form__container">
+      </div>
+    <div class="modal__body">
+    <!-- Register form -->
+    <div class="auth-form auth-register js-modal-register">
+          <div class="auth-form__container js-modal-container">
             <div class="auth-form__header">
-              <h3 class="auth-form__heading">Đăng Ký</h3>
-              <span class="auth-form__switch-btn">Đăng nhập</span>
+              <h3 class="auth-form__heading ">Đăng Ký</h3>
+              <span class="auth-form__switch-btn js-login">Đăng nhập</span>
             </div>
 
             <div class="auth-form__form">
@@ -1451,29 +1563,29 @@
             </div>
 
             <div class="auth-form__controls">
-              <button class="btn auth-form__controls-back">TRỞ LẠI</button>
+              <button class="btn auth-form__controls-back js-close">TRỞ LẠI</button>
               <button class="btn btn-primary">ĐĂNG KÝ</button>
             </div>
           </div>
 
-          <div class="auth-form__socials">
-            <a href="" class="auth-form__socials--fb btn btn--size-s btn--with-icon">
+          <div class="auth-form__socials ">
+            <a href="#" class="auth-form__socials--fb btn btn--size-s btn--with-icon">
               <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
               <span class="auth-form__socials-title">Kết nối với Facebook</span>
             </a>
-            <a href="" class="auth-form__socials--gg btn btn--size-s btn--with-icon">
+            <a href="#" class="auth-form__socials--gg btn btn--size-s btn--with-icon">
               <img src="/assets/img/icon__gg.png" alt="" class="auth-form__socials-icon">
               <span class="auth-form__socials-title">Kết nối với Google</span>
             </a>
           </div>
-        </div> -->
+        </div>
 
   <!-- Login form -->
-  <!-- <div class="auth-form"> 
-          <div class="auth-form__container">
+  <div class="auth-form auth-login js-modal-login"> 
+          <div class="auth-form__container js-modal-container">
             <div class="auth-form__header">
-              <h3 class="auth-form__heading">Đăng nhập</h3>
-              <span class="auth-form__switch-btn">Đăng ký</span>
+              <h3 class="auth-form__heading ">Đăng nhập</h3>
+              <span class="auth-form__switch-btn js-register">Đăng ký</span>
             </div>
 
             <div class="auth-form__form">
@@ -1498,28 +1610,88 @@
             </div>
 
             <div class="auth-form__controls">
-              <button class="btn auth-form__controls-back">TRỞ LẠI</button>
+              <button class="btn auth-form__controls-back js-close">TRỞ LẠI</button>
               <button class="btn btn-primary">ĐĂNG NHẬP</button>
             </div>
           </div>
 
           <div class="auth-form__socials">
-            <a href="" class="auth-form__socials--sms btn btn--size-s-l btn--with-icon">
+            <a href="#" class="auth-form__socials--sms btn btn--size-s-l btn--with-icon">
               <i class="auth-form__socials-icon fa-solid fa-comment-dots"></i>
               <span class="auth-form__socials-title-l">SMS</span>
             </a>
-            <a href="" class="auth-form__socials--fb btn btn--size-s-l btn--with-icon">
+            <a href="#" class="auth-form__socials--fb btn btn--size-s-l btn--with-icon">
               <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
               <span class="auth-form__socials-title-l">Facebook</span>
             </a>
-            <a href="" class="auth-form__socials--gg btn btn--size-s-l btn--with-icon">
+            <a href="#" class="auth-form__socials--gg btn btn--size-s-l btn--with-icon">
               <img src="/assets/img/icon__gg.png" alt="" class="auth-form__socials-icon">
               <span class="auth-form__socials-title-l">Google</span>
             </a>
           </div>
         </div> 
       </div>
-    </div> -->
+    </div>
+
+
+    <script>
+      const registers = document.querySelectorAll('.js-register');
+      const logins = document.querySelectorAll('.js-login');
+      const modal = document.querySelector('.js-modal');
+      const modalLogin = document.querySelector('.js-modal-login');
+      const modalCloses = document.querySelectorAll('.js-close')
+      const modalRegister = document.querySelector('.js-modal-register')
+      const modalContainers = document.querySelectorAll('.js-modal-container')
+      const likes = document.querySelectorAll('.home-product-item__heart')
+
+      function showLogin(){
+        modal.classList.add('open');
+        modalLogin.classList.add('open');
+        modalRegister.classList.remove('open')
+      }
+
+      function showRegister(){
+        modal.classList.add('open');
+        modalRegister.classList.add('open');
+        modalLogin.classList.remove('open');
+      }
+      
+      function hidenModal(){
+        modal.classList.remove('open');
+        modalLogin.classList.remove('open');
+        modalRegister.classList.remove('open');
+      }
+
+      for(const like of likes){
+        like.addEventListener('click', () => {
+          like.classList.toggle('home-product-item__heart--liked')
+        });
+      }
+      // for(let i = 0; i < likes.length; i++){
+      //   likes[i].addEventListener('click', );
+      // }
+    
+
+      for(const login of logins ){
+        login.addEventListener('click',showLogin);
+      }
+      
+      for(const register of registers){
+        register.addEventListener('click',showRegister)
+      }
+
+      for(const modalClose of modalCloses){
+      modalClose.addEventListener('click',hidenModal);
+      }
+
+      modal.addEventListener('click', hidenModal);
+
+      for(const modalContainer of modalContainers){
+        modalContainer.addEventListener('click', function(e){
+        e.stopPropagation()
+      })
+      }
+    </script>
 </body>
 
 </html>
